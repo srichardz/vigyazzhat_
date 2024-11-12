@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 con = pymongo.MongoClient("mongodb://localhost:27017/")
 db = con["vigyazzhat"]
-users = db["users"]
-
+tables = db["tables"]
+tables.insert_one({"passwd" : "jelszo", "cards_in_play" : [[3, 3], [2, 2], [1, 1], [0, 0]], "players" : [{"hand" : []}, {"hand" : []}, {"hand" : []}, {"hand" : []}]})
 @app.route("/login/<username>", methods=['GET'])
 def login(username):
-    user = users.insert_one({"username" : username, "hand" : []})
+    user = tables.insert_one({"username" : username, "hand" : []})
     return str(user.inserted_id)
     # create user in db:
     # username (string)          - will be seen
@@ -57,6 +57,10 @@ def start_game(game_id):
         hand = set_player_hand(db, player_id, draw_from_deck(game_id, 10)) # draw 10 card and give to player in db
 
     # return game_state
+    pass
+
+def set_deck(game_id, deck):
+    
     pass
 
 if __name__  == '__main__':

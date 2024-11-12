@@ -20,9 +20,9 @@ def login(username):
     #pass
     return "<p>oooooo</p>"
 
-@app.route("/test", methods=['GET'])
-def test():
-    return {"name" : "bendoahahaha"}
+@app.route("/dummy_create_table", methods=['POST'])
+def dummy_create_table(user_id, passwd):
+    return {"table_id" : "123"}
 
 @app.route("/create_table", methods=['POST'])
 def create_table(passwd):

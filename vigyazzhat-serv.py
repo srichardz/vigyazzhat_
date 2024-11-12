@@ -7,7 +7,7 @@ app = Flask(__name__)
 con = pymongo.MongoClient("mongodb://localhost:27017/")
 db = con["vigyazzhat"]
 tables = db["tables"]
-tables.insert_one({"passwd" : "jelszo", "cards_in_play" : [[3, 3], [2, 2], [1, 1], [0, 0]], "players" : [{"hand" : []}, {"hand" : []}, {"hand" : []}, {"hand" : []}]})
+#tables.insert_one({"passwd" : "jelszo", "cards_in_play" : [[3, 3], [2, 2], [1, 1], [0, 0]], "players" : [{"hand" : []}, {"hand" : []}, {"hand" : []}, {"hand" : []}]})
 @app.route("/login/<username>", methods=['GET'])
 def login(username):
     user = tables.insert_one({"username" : username, "hand" : []})
@@ -19,6 +19,10 @@ def login(username):
     # returns uuid (player_id)
     #pass
     return "<p>oooooo</p>"
+
+@app.route("/test", methods=['GET'])
+def test():
+    return {"name" : "bendoahahaha"}
 
 @app.route("/create_table", methods=['POST'])
 def create_table(passwd):

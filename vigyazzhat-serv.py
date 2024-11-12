@@ -1,21 +1,24 @@
 from flask import Flask
 import pymongo
 import uuid
-#Bengo commit
 
 app = Flask(__name__)
 
 con = pymongo.MongoClient("mongodb://localhost:27017/")
 db = con["vigyazzhat"]
+users = db["users"]
 
 @app.route("/login/<username>", methods=['GET'])
 def login(username):
+    user = users.insert_one({"username" : username, "hand" : []})
+    return str(user.inserted_id)
     # create user in db:
     # username (string)          - will be seen
     # uuid     (hash)            - used to communicate with the server, not public
     # hand     (array<int|byte>) - used to store cards as numbers/values, init to empty array
     # returns uuid (player_id)
-    pass
+    #pass
+    return "<p>oooooo</p>"
 
 @app.route("/create_table", methods=['POST'])
 def create_table(passwd):
@@ -58,3 +61,4 @@ def start_game(game_id):
 
 if __name__  == '__main__':
     app.run()
+    #client.close()

@@ -1,0 +1,72 @@
+[{
+  "_id": "67348ab2b3c9ace770518985",
+  "passwd": "<game_password>",
+  "owner": "<game_owner_id>",
+  "invite_string": "<invite_string>",
+  "cards_in_play": [
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  ],
+  "players": {
+    "<unique_player_id_0>": {
+      "hand": []
+    },
+    "<unique_player_id_1>": {
+      "hand": []
+    },
+    "<unique_player_id_2>": {
+      "hand": []
+    },
+    "<unique_player_id_3>": {
+      "hand": []
+    },
+    "<unique_player_id_4>": {
+      "hand": []
+    },
+    "<unique_player_id_5>": {
+      "hand": []
+    },
+    "<unique_player_id_6>": {
+      "hand": []
+    },
+    "<unique_player_id_7>": {
+      "hand": []
+    },
+    "<unique_player_id_8>": {
+      "hand": []
+    },
+    "<unique_player_id_9>": {
+      "hand": []
+    }
+  }
+}]

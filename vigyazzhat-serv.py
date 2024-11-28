@@ -7,7 +7,7 @@ from bson import ObjectId
 
 app = Flask(__name__)
 
-con = pymongo.MongoClient("mongodb://localhost:27017/")
+con = pymongo.MongoClient("mongodb://mongo:27017/")
 db = con["vigyazzhat"]
 tables = db["tables"]
 
@@ -259,5 +259,5 @@ def end_game(game_id):
     tables.update_one( { "_id" : game['_id'] }, { "$set" : { f"status" : "ended" } } )
 
 if __name__  == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
     #client.close()
